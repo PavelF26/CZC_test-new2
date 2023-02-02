@@ -1,0 +1,18 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<suite name="JUnit5 - Sanity">
+
+    <test name="Test pruchodu kosikem">
+        <classes>
+            <class name="czc.serenity.test.SanityTest"/>
+        </classes>
+    </test>
+
+    <test name="Test overeni StatusKodu stranek">
+        <classes>
+            <class name="czc.serenity.test.SanityTestResponseCode"/>
+        </classes>
+    </test>
+
+</suite>
+
