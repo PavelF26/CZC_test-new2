@@ -46,7 +46,13 @@ public class Test1 {
                 e.printStackTrace();
 
             }
+
+           //potvrzeni filtru
             driver.findElement(By.cssSelector("[id=\"availability\"] [class=\"filter-checkbox \"]  svg")).click();
+
+            //zachyceni textu a overeni
+            String getTextButon = String.valueOf(driver.findElement(By.cssSelector("[class=\"new-tile\"]:nth-child(1) [class=\"btn btn-buy\"]")));
+            System.out.println(getTextButon);
 
 
 
