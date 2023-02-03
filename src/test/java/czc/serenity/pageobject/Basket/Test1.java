@@ -1,5 +1,6 @@
 package czc.serenity.pageobject.Basket;
 
+import czc.serenity.pageobject.AceptCookies;
 import czc.serenity.pageobject.MoveToHomePage;
 import jdk.jfr.Description;
 import net.serenitybdd.junit5.SerenityJUnit5Extension;
@@ -8,6 +9,7 @@ import org.junit.jupiter.api.*;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.junit.jupiter.api.parallel.Execution;
 import org.junit.jupiter.api.parallel.ExecutionMode;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
 public class Test1 {
@@ -24,6 +26,7 @@ public class Test1 {
         WebDriver driver;
         MoveToHomePage goToHomePage;
         String baseURL = "https://test.czc.cz/";
+        AceptCookies cookie;
 
 
 
@@ -33,7 +36,17 @@ public class Test1 {
         public void basketBranchStorePaymentWithHomeCreditDisabledTest() {
             // otevreni HP CZC
             this.goToHomePage.goToHomePage();
+            //otevre EL
             driver.get(baseURL + "microsoft-elektronicke-licence/produkty");
+            //potvrdi cookies
+            this.cookie.confirmCookieModal();
+            try {
+                Thread.sleep(1000);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+
+            }
+            driver.findElement(By.cssSelector("[id=\"availability\"] [class=\"filter-checkbox \"]  svg")).click();
 
 
 
