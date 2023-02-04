@@ -28,6 +28,7 @@ public class Test1 {
         String baseURL = "https://test.czc.cz/";
         AceptCookies cookie;
 
+        String buttonBasket = "Do košíku";
 
 
 
@@ -51,8 +52,9 @@ public class Test1 {
             driver.findElement(By.cssSelector("[id=\"availability\"] [class=\"filter-checkbox \"]  svg")).click();
 
             //zachyceni textu a overeni
-            String getTextButon = String.valueOf(driver.findElement(By.cssSelector("[class=\"new-tile\"]:nth-child(1) [class=\"btn btn-buy\"]")));
+            String getTextButon = String.valueOf(driver.findElement(By.cssSelector("[class=\"new-tile\"]:nth-child(1) [class=\"btn btn-buy\"]")).getText());
             System.out.println(getTextButon);
+          Assertions.assertEquals(buttonBasket, getTextButon, "Tlacitoko");
 
 
 
