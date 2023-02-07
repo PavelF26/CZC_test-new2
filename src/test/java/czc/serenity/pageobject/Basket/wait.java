@@ -1,13 +1,14 @@
 package czc.serenity.pageobject.Basket;
 
 import lombok.SneakyThrows;
+import net.serenitybdd.core.steps.UIInteractions;
 import net.thucydides.core.annotations.Step;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
 import java.util.List;
 
-public class wait {
+public class wait extends UIInteractions {
 
     @FindBy(css ="[id=\"availability\"] [class=\"filter-checkbox \"]  svg")
     List<WebElement> click;
@@ -25,7 +26,6 @@ public class wait {
 
 
         }
-
 
 
     }

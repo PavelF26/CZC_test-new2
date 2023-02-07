@@ -30,7 +30,7 @@ public class Test1 {
 
         String buttonBasket = "Do košíku";
 
-
+        wait wait;
 
         @Test
         @Description("pruchod kosikem s: Home Credit Disabled test")
@@ -41,15 +41,9 @@ public class Test1 {
             driver.get(baseURL + "microsoft-elektronicke-licence/produkty");
             //potvrdi cookies
             this.cookie.confirmCookieModal();
-            try {
-                Thread.sleep(1000);
-            } catch (InterruptedException e) {
-                e.printStackTrace();
 
-            }
+            this.wait.setClick();
 
-           //potvrzeni filtru
-            driver.findElement(By.cssSelector("[id=\"availability\"] [class=\"filter-checkbox \"]  svg")).click();
 
             //zachyceni textu a overeni
             String getTextButon = String.valueOf(driver.findElement(By.cssSelector("[class=\"new-tile\"]:nth-child(1) [class=\"btn btn-buy\"]")).getText());
