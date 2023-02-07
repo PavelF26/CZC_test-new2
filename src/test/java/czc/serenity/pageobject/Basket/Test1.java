@@ -54,7 +54,7 @@ public class Test1 {
             //zachyceni textu a overeni
             String getTextButon = String.valueOf(driver.findElement(By.cssSelector("[class=\"new-tile\"]:nth-child(1) [class=\"btn btn-buy\"]")).getText());
             System.out.println(getTextButon);
-          Assertions.assertEquals(buttonBasket, getTextButon, "Tlacitoko");
+            Assertions.assertEquals(buttonBasket, getTextButon, "Text do kosiku nenalezeno");
 
 
 
