@@ -28,7 +28,7 @@ public class Test1 {
         String baseURL = "https://test.czc.cz/";
         AceptCookies cookie;
 
-        String buttonBasket = "Do košíku";
+        private String buttonBasket = "Do košíku";
 
         wait wait;
 
@@ -43,9 +43,21 @@ public class Test1 {
             this.cookie.confirmCookieModal();
 
             this.wait.setClick();
+            Assertions.assertTrue(wait.checkBox(),
+                    "check box nedoslo ke zaskrtnutí");     //bere z metody wait moznost checkbox
 
 
             //zachyceni textu a overeni
+            Assertions.assertTrue(wait.checkButton().contains(buttonBasket), "tlacitko je nespravne \n"); //
+
+
+
+
+
+
+
+
+
             String getTextButon = String.valueOf(driver.findElement(By.cssSelector("[class=\"new-tile\"]:nth-child(1) [class=\"btn btn-buy\"]")).getText());
             System.out.println(getTextButon);
             Assertions.assertEquals(buttonBasket, getTextButon, "Text do kosiku nenalezeno");
