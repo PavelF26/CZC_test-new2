@@ -26,13 +26,11 @@ public class BusketPrice {
         @Managed(driver = "chrome")
         WebDriver driver;
         MoveToHomePage goToHomePage;
-        String baseURL = "https://test.czc.cz/";
+        String baseURL = "https://www.czc.cz/";
         AceptCookies cookie;
         MethodBP MethodBP;
         MethodBP ClickNext;
-
         MethodBP ClickToBeforeBasket;
-
         MethodBP ClickToShippingAndPayment;
 
         private String buttonBasket = "Do košíku";
@@ -51,6 +49,7 @@ public class BusketPrice {
               this.ClickNext.ClickNext();
               this.ClickToBeforeBasket.ClickToBeforeBasket();
               this.ClickToShippingAndPayment.ClickToShippingAndPayment();
+
 
 
 

@@ -1,10 +1,12 @@
 package czc.serenity.pageobject.Basket;
 
 import lombok.SneakyThrows;
+import net.serenitybdd.core.annotations.findby.By;
 import net.serenitybdd.core.steps.UIInteractions;
 import net.thucydides.core.annotations.Step;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.ui.Select;
 
 import java.util.List;
 
@@ -20,12 +22,19 @@ public class MethodBP extends UIInteractions { // extends UIInteractions bere to
     @FindBy(css ="[class=\"buy-mode__content\"] [class=\"btn btn-primary\"] ")
     List<WebElement> ClickNext;
 
-    //
+    //Klik na tlacitko predkosik
     @FindBy(css ="[class=\"basket-controls op-controls clearfix\"] [class=\"btn btn-primary btn--md\"] ")
     List<WebElement> ClickToBeforeBasket;
 
+    //Klik na tlacitko smerujici na dopravu a platbu v predkosiku
     @FindBy(css ="[class=\"basket-controls op-controls clearfix\"] [class=\"btn btn-primary btn--md\"] ")
     List<WebElement> ClickToShippingAndPayment;
+
+
+
+    //kliknuti na vyber dopravy
+    // @FindBy(css ="[class=\"basket-controls op-controls clearfix\"] [class=\"btn btn-primary btn--md\"] ")
+    // List<WebElement> ClickToShippingAndPayment;
 
 
     @Step("fungovalo overeni vybrani produktu")
@@ -79,7 +88,6 @@ public class MethodBP extends UIInteractions { // extends UIInteractions bere to
         return false;
 
     }
-
 
 
 
