@@ -11,6 +11,7 @@ import org.junit.jupiter.api.extension.ExtendWith;
 import org.junit.jupiter.api.parallel.Execution;
 import org.junit.jupiter.api.parallel.ExecutionMode;
 import org.openqa.selenium.By;
+import org.openqa.selenium.Dimension;
 import org.openqa.selenium.WebDriver;
 
 
@@ -21,19 +22,26 @@ public class BusketPrice {
     @Execution(ExecutionMode.SAME_THREAD)
     @Nested
     @DisplayName("BasketTest HomeCredit")
+
     public class BasketTransportAndPaymentTest {
         @Order(1)
-        @Managed(driver = "chrome")
+        @Managed(driver = "firefox")
         WebDriver driver;
         MoveToHomePage goToHomePage;
-        String baseURL = "https://www.czc.cz/";
+        String baseURL = "https://test.czc.cz/";
         AceptCookies cookie;
         MethodBP MethodBP;
         MethodBP ClickNext;
         MethodBP ClickToBeforeBasket;
         MethodBP ClickToShippingAndPayment;
 
+        BasketTwo chooseRandomDelivery;
+
+
+
         private String buttonBasket = "Do košíku";
+        public Object BasketTwo;
+
 
 
         @Test
@@ -50,6 +58,8 @@ public class BusketPrice {
               this.ClickToBeforeBasket.ClickToBeforeBasket();
               this.ClickToShippingAndPayment.ClickToShippingAndPayment();
 
+              // pouziti random vyberu dopravy
+              chooseRandomDelivery.chooseRandomDelivery();
 
 
 
