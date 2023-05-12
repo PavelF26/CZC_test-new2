@@ -1,12 +1,10 @@
 package czc.serenity.pageobject.Basket;
 
 import lombok.SneakyThrows;
-import net.serenitybdd.core.annotations.findby.By;
 import net.serenitybdd.core.steps.UIInteractions;
 import net.thucydides.core.annotations.Step;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.support.ui.Select;
 
 import java.util.List;
 
@@ -30,18 +28,18 @@ public class MethodBP extends UIInteractions { // extends UIInteractions bere to
     @FindBy(css ="[class=\"basket-controls op-controls clearfix\"] [class=\"btn btn-primary btn--md\"] ")
     List<WebElement> ClickToShippingAndPayment;
 
+    @FindBy (css = "#del-pay-frm__payment-items > button")
+    List<WebElement> morePrize;
 
 
-    //kliknuti na vyber dopravy
-    // @FindBy(css ="[class=\"basket-controls op-controls clearfix\"] [class=\"btn btn-primary btn--md\"] ")
-    // List<WebElement> ClickToShippingAndPayment;
+
+
 
 
     @Step("fungovalo overeni vybrani produktu")
     @SneakyThrows
     public void setClick() {
         if (!click.isEmpty() && click.get(0).isDisplayed()) {
-            Thread.sleep(1000);
             System.out.println("ted se klidne na: " + click.get(0).getText());
             click.get(0).click(); //vzbere hned prvni to je 0
             System.out.println("Produkt PC nalezen a vybran");
@@ -86,6 +84,22 @@ public class MethodBP extends UIInteractions { // extends UIInteractions bere to
             System.out.println("Nenalezeno tlacitko do casti kosiku doprava a platba");
 
         return false;
+
+    }
+
+
+    @Step("Dojde na rozluknutí více cen")
+    @SneakyThrows
+    public boolean morePrizes() {
+        System.out.println("Jde rozšířit možnosti plateb");
+        if  (!morePrize.isEmpty()) {
+            System.out.println("clikne se : " + morePrize.get(0).getText());
+            morePrize.get(0).click();
+      } else
+          System.out.println("Nenalezeno tlacitko pro více cen");
+
+      return false;
+
 
     }
 
